@@ -4,7 +4,8 @@ inputs:
   filters:  # id of input
     description: 'An array of filter objects'
     required: true
-    default: []
+    default: |
+      []
 runs:
   using: 'node12'
   main: 'index.js'
