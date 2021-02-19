@@ -1,0 +1,22 @@
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Label certain PRs
+      uses: ./
+      with:
+        filters:
+        - author: blast-hardcheese
+          labels: [ maintainer ]
+        - composite:
+            labels: [ docs ]
+            all:
+            - files: '*.md'
+            - not:
+              - files: '*.scala'
