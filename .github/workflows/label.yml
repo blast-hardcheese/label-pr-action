@@ -11,12 +11,12 @@ jobs:
     - name: Label certain PRs
       uses: ./
       with:
-        filters:
-        - author: blast-hardcheese
-          labels: [ maintainer ]
-        - composite:
-            labels: [ docs ]
-            all:
-            - files: '*.md'
-            - not:
-              - files: '*.scala'
+        filters: |
+          - author: blast-hardcheese
+            labels: [ maintainer ]
+          - composite:
+              labels: [ docs ]
+              all:
+              - files: '*.md'
+              - not:
+                - files: '*.scala'
